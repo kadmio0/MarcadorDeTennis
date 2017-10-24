@@ -1,9 +1,4 @@
 language: ruby
-rvm:
- - 2.3
- - jruby
- - rbx-2
-install:
- - bundle install
 script:  
- - bundle exec rake
+ - cucumber
+ - rspec
