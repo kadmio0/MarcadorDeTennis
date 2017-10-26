@@ -1,14 +1,16 @@
 require 'sinatra'
+require "./lib/TennisGame.rb"
 
 
+juegoDeTenis = TennisGame.new
 get '/' do
     erb :Principal_view
 end
 
 
 post '/partida' do
-    @p1="0"
-    @p2="0"
+    juegoDeTenis = TennisGame.new
+    @marcador = juegoDeTenis.getScore()
     erb :Marcador_view
 end
 
@@ -17,15 +19,17 @@ get '/partida' do
 end
 
 post '/puntoParaJugador1' do
-    @p1 = params[:puntaje1]
-    @p2 = "0"
-    @p1 = (@p1.to_i + 15).to_s
+    juegoDeTenis.pointToPlayer(1)
+    @marcador = juegoDeTenis.getScore()
     erb :Marcador_view
 end
 
 post '/puntoParaJugador2' do
-    @p1 = "0"
-    @p2 = params[:puntaje2]
-    @p2 =(@p2.to_i + 15).to_s
+    juegoDeTenis.pointToPlayer(2)
+    @marcador = juegoDeTenis.getScore()
     erb :Marcador_view
+end
+
+post '/reiniciar' do
+    redirect '/'
 end

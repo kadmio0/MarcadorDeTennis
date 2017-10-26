@@ -1,11 +1,13 @@
-<p><%=@p1%> - <%=@p2%></p>
+<p><%=@marcador%></p>
+
 <form action='/puntoParaJugador1' method="post">
-	<input type="hidden"  name="puntaje1" value=<%=@p1%>>
-	<input type="submit" value="jugador1">
+	<button type="submit" value="jugador1">Punto para jugador 1</button> 
 </form>
 
 <form action='/puntoParaJugador2' method="post">
-	<input type="hidden"  name="puntaje2" value=<%=@p2%>>
-	<input type="submit" value="jugador2">
+	<button type="submit" value="jugador2">Punto para jugador 2</button> 
 </form>
 
+<form action='/reiniciar' method="post">
+	<button type="submit" value="reiniciar">Reiniciar Juego</button> 
+</form>

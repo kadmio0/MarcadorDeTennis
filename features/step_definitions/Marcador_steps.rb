@@ -21,3 +21,10 @@ end
 When("presiono boton {string}") do |string|
     click_button(string)
 end
+Then("visito la pagina  de punto para jugador 1") do
+    visit('/puntoParaJugador1')
+end
+
+Then("visito la pagina  de punto para jugador 2") do 
+    visit('/puntoParaJugador2')
+end
