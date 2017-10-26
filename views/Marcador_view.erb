@@ -1,4 +1,11 @@
-0 - 0
-<form action='/punto' method="post">
+<p><%=@p1%> - <%=@p2%></p>
+<form action='/puntoParaJugador1' method="post">
+	<input type="hidden"  name="puntaje1" value=<%=@p1%>>
 	<input type="submit" value="jugador1">
 </form>
+
+<form action='/puntoParaJugador2' method="post">
+	<input type="hidden"  name="puntaje2" value=<%=@p2%>>
+	<input type="submit" value="jugador2">
+</form>
+
